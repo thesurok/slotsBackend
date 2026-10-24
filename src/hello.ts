@@ -1,8 +1,7 @@
-import { SYMBOLS } from "./game/symbols.js";
+import { seededRng } from "./rng/seededRng.js";
 
-function hello(name: string) {
-  return `Hello, ${name}!`;
-}
+const rng = seededRng(123);
 
-console.log(hello('World'));
-console.log(SYMBOLS);
+console.log(rng.randomInt(0, 100));
+console.log(rng.randomInt(0, 100));
+console.log(rng.randomInt(0, 100));
