@@ -1,21 +1,18 @@
 # Progress
 
 ## Where we are
-Phase 2 — RNG. `randomInt` wraps unbiased `node:crypto.randomInt`.
+Phase 3 — Grid generation done. Next: evaluate paylines / payouts.
 
 ## Steps done
-- Phase 0 — Setup
-- Phase 1 — Domain types
-- 2.1 — `src/rng/randomInt.ts` via `crypto.randomInt` (unbiased); `@types/node` + `types: ["node"]`
+- Phase 0–2 — Setup, domain types, RNG + Vitest
+- 3.1 — `generateGrid(config, rng)` + tests (shape, determinism)
 
 ## Concepts learned
-- Prior Phase 0–1 concepts
-- `@types/node` = declaration files for Node APIs
-- `types: ["node"]` in tsconfig for IDE + tsc
-- `crypto.randomInt(min, max)` = half-open `[min, max)`, CSPRNG, no modulo bias
+- (prior) + grid as spin snapshot; stop = top row; wrap with `% strip.length`
+- Don’t leave compiled `.js` under `src/` when using ESM + Vitest
 
 ## Open questions
-- (none)
+- Vitest Windows “current suite” flake — clear `node_modules/.vite` / re-run
 
 ## Next step
-2.2 — Seedable RNG for tests (injectable `Rng` type).
+3.2 — Evaluate wins on a grid (paylines + paytable).
