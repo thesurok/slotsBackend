@@ -17,3 +17,4 @@ export function generateGrid(config: Config, rng: Rng): Grid {
     }
     return result;
 }
+
