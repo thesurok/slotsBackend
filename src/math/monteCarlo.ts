@@ -3,7 +3,7 @@ import { spin } from "../game/spin.js";
 import { seededRng } from "../rng/seededRng.js";
 import type { Rng } from "../rng/types.js";
 
-export type MonteCarloResult = {
+export type PayoutProfile = {
     rtp: number,
     hitFrequency: number
 }
@@ -13,7 +13,7 @@ export function monteCarlo(
     rng: Rng,
     spins: number,
     bet: number
-): MonteCarloResult {
+): PayoutProfile {
     let totalWins = 0;
     let totalBets = 0;
     let spinsWithPayout = 0;
